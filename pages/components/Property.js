@@ -22,9 +22,21 @@ export default function Property({ property: { coverPhoto, price, rentFrequency,
                             <Box paddingRight='3' color='green.400'>
                                 {isVerified && <GoVerified />}
                             </Box>
-                            <Text fontWeight='bold' fontSize='lg'>AED {price}{rentFrequency &&`/${rentFrequency}`}</Text>
+                            <Text fontWeight='bold' fontSize='lg'>AED {millify(price)}{rentFrequency && `/${rentFrequency}`}</Text>
                         </Flex>
+
+                        <Box>
+                            <Avatar size='sm' src={agency?.logo?.url} />
+                        </Box>
                     </Flex>
+
+                    <Flex alignItems='center' p='1' justifyContent='space-between' w={250} color='blue.500'>
+                        {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
+                    </Flex>
+
+                    <Text fontSize='lg'>
+                        {title.length > 30 ? `${title.substring(0, 30)}...` : title}
+                    </Text>
                 </Box>
             </Flex>
         </Link>

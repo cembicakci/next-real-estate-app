@@ -21,11 +21,8 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, i
 
 export default function Home({ propertyForSale, propertyForRent }) {
 
-  console.log(propertyForRent, propertyForSale)
-
   return (
     <div>
-      <h1>Hello Next</h1>
       <Banner
         purpose={'RENT A HOME'}
         title1="Rental Homes For"
@@ -62,8 +59,8 @@ export default function Home({ propertyForSale, propertyForRent }) {
 
 
 export async function getStaticProps() {
-  const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6/`)
-  const propertyForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6/`)
+  const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`);
+  const propertyForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`);
 
   return {
     props: {
