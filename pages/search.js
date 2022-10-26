@@ -13,8 +13,6 @@ function Search({ properties }) {
     const [searchFilters, setSearchFilters] = useState(false);
     const router = useRouter();
 
-    console.log(router)
-
     return (
         <Box>
             <Flex
