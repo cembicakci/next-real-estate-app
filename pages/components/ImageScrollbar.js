@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
-import { Box, Text, Icon } from '@chakra-ui/react';
+import { Box, Text, Icon, Flex } from '@chakra-ui/react';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
 
@@ -36,7 +36,7 @@ const RightArrow = () => {
     );
 }
 
-function ImageScrollbar() {
+function ImageScrollbar({ data }) {
     return (
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} style={{ overflow: 'hidden' }} >
             {data.map((item) => (
